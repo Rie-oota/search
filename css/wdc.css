@@ -24,12 +24,13 @@ img {
 }
 
 header {
-  height: 5.625rem;
+  position: absolute;
+  width: 100%;
 }
 
 .menu {
   width: 100%;
-  padding: 0 1.875rem;
+  padding: 1.875rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,16 +63,8 @@ header p {
 
 #keyvisual {
   width: 100%;
-  height: 38.125rem;
-}
-
-#keyvisual img {
-  width: 100%;
-  height: 43.75rem;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  object-fit: cover;
+  height: 45rem;
+  background: url(../image/ogp.png) no-repeat top/cover;
 }
 
 .application-btn {
@@ -83,7 +76,7 @@ header p {
   line-height: 4.125rem;
   box-shadow: 0 0.625rem rgb(221,17,142);
   position: absolute;
-  top: 34.375rem;
+  top: 36rem;
   left: 6.125rem;
 }
 
@@ -226,14 +219,22 @@ font-weight: 500;
   padding-bottom: 6.75rem;
 }
 
-.speaker-list li {
+.speaker-content {
   display: flex;
   gap: 3.75rem;
   padding: 5.3125rem 7.5rem 0;
 }
 
-.speaker-list li:first-child {
+.speaker-content:first-child {
   padding-top: 3.4375rem;
+}
+
+.speaker-text {
+  width: 55%;
+}
+
+.speaker-image {
+  width: 45%;
 }
 
 h5 {
@@ -345,7 +346,7 @@ footer p {
   position: fixed;
   bottom: 2.5rem;
   right: 2.5rem;
-  display: none;
+  opacity: 0;
 }
 
 .top-button img {
@@ -356,7 +357,7 @@ footer p {
 }
 
 .top-button.show {
-  display: block;
+  opacity: 1;
 }
 
 /* お申し込みフォーム */

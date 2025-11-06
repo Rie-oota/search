@@ -11,7 +11,7 @@ $(function() {
 $(function () {
   $('.bottom-area').on("inview", function () {
     // トップ遷移ボタンにshowクラスを追加して表示
-    $(".top-button").addClass('show');
+    $(".top-button").fadeIn(400).addClass('show');
   });
 });
 
@@ -19,10 +19,9 @@ $(function () {
 $(function () {
   $('.top-area').on("inview", function () {
     // トップ遷移ボタンからshowクラスを削除して非表示
-    $(".top-button").removeClass('show');
+    $(".top-button").fadeOut(400).removeClass('show');
   });
 });
-
 
 // WDCをどちらでお知りになりましたか？の選択項目
 function Color(inflow){
