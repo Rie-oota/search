@@ -361,6 +361,7 @@ footer p {
 
 .top-button.show {
   opacity: 1;
+  transition: 0.4s;
 }
 
 /* お申し込みフォーム */

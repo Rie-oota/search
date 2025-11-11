@@ -18,19 +18,18 @@ const links = document.querySelectorAll('.my-link');
     });
   });
 
-// speakerセクション以下が表示領域に入ったら
-$(function () {
-  $('#bottom-area').on("inview", function () {
-    // トップ遷移ボタンにshowクラスを追加して表示
-    $(".top-button").fadeIn(400).addClass('show');
-  });
-});
-
-// speakerセクション以上が表示領域に入ったら
-$(function () {
-  $('#top-area').on("inview", function () {
-    // トップ遷移ボタンからshowクラスを削除して非表示
-    $(".top-button").fadeOut(400).removeClass('show');
+$(function(){
+  $(window).scroll(function (){
+    $("#bottom-area").each(function(){
+      var imgPos = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll > imgPos - windowHeight + windowHeight/5){
+        $(".top-button").fadeIn(400).addClass("show");
+      } else {
+        $(".top-button").fadeOut(400).removeClass("show");
+      }
+    });
   });
 });
 
