@@ -7,9 +7,20 @@ $(function() {
   });
 });
 
+// リンク先をclassで設定する
+const links = document.querySelectorAll('.my-link');
+  links.forEach((link) => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const targetClass = event.target.getAttribute('data-target');
+      const targetSection = document.querySelector(`.${targetClass}`);
+      targetSection.scrollIntoView({behavior: 'smooth'});
+    });
+  });
+
 // speakerセクション以下が表示領域に入ったら
 $(function () {
-  $('.bottom-area').on("inview", function () {
+  $('#bottom-area').on("inview", function () {
     // トップ遷移ボタンにshowクラスを追加して表示
     $(".top-button").fadeIn(400).addClass('show');
   });
@@ -17,7 +28,7 @@ $(function () {
 
 // speakerセクション以上が表示領域に入ったら
 $(function () {
-  $('.top-area').on("inview", function () {
+  $('#top-area').on("inview", function () {
     // トップ遷移ボタンからshowクラスを削除して非表示
     $(".top-button").fadeOut(400).removeClass('show');
   });
@@ -44,19 +55,19 @@ $(function () {
     // お名前の項目をコンソールに表示
     console.log("お名前");
     // お名前のテキストをコンソールに表示
-    console.log($("#name").val());
+    console.log($(".name").val());
     // メールアドレスの項目をコンソールに表示
     console.log("メールアドレス");
     // メールアドレスのテキストをコンソールに表示
-    console.log($("#email").val());
+    console.log($(".email").val());
     // 電話番号の項目をコンソールに表示
     console.log("電話番号");
     // 電話番号のテキストをコンソールに表示
-    console.log($("#tel").val());
+    console.log($(".tel").val());
     // スピーカーに質問したいことの項目をコンソールに表示
     console.log("スピーカーに質問したいこと");
     // スピーカーに質問したいことのテキストをコンソールに表示
-    console.log($("#question").val());
+    console.log($(".question").val());
     // WDCをどちらでお知りになりましたか？の項目をコンソールに表示
     console.log("WDCをどちらでお知りになりましたか？");
     // WDCをどちらでお知りになりましたか？のvalueの値をコンソールに表示

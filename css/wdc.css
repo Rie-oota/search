@@ -61,7 +61,7 @@ header p {
   z-index: 1;
 }
 
-#keyvisual {
+.keyvisual {
   width: 100%;
   height: 45rem;
   background: url(../image/ogp.png) no-repeat top/cover;
@@ -95,9 +95,8 @@ header p {
   letter-spacing: 0.2rem;
 }
 
-#about {
+.about {
   width: 100%;
-  height: 63.625rem;
   background-color: #141414;
 }
 
@@ -122,17 +121,17 @@ h2 {
 
 .about-flex {
   display: flex;
-  height: 40.625rem;
-  padding: 3.75rem 8rem 6.875rem 8rem;
+  padding: 3.75rem 8rem 6.875rem;
   gap: 4.3125rem;
 }
 
-.about-image {
-  width: 35%;
+.about img {
+  width: 27.8125rem;
+  height: 40.625rem;
 }
 
 .about-text {
-  width: 65%;
+  width: 40.125rem;
 }
 
 h3 {
@@ -211,7 +210,7 @@ font-weight: 500;
   letter-spacing: 0.1875rem;
 }
 
-#speaker {
+.speaker {
   background: linear-gradient(152.29deg, #0F002E 0%, #0E002E 0%, #1E092B 23.1%, #320C65 49.12%, #A01B7C 79.8%, #C21780 100%);
 }
 
@@ -254,13 +253,13 @@ h6 {
   padding-bottom: 2.5rem;
 }
 
-#speaker p {
+.speaker p {
   font-size: 1rem;
   line-height: 1.8125rem;
   padding-bottom: 3.875rem;
 }
 
-#session {
+.session {
   width: 100%;
   height: 64.75rem;
   background-color: #141414;
@@ -299,13 +298,17 @@ h7 {
   padding-top: 0.9375rem;
 }
 
-#registor {
+.registor {
   width: 100%;
-  height: 83.0625rem;
+  height: 87rem;
   position: relative;
 }
 
-#registor img {
+.registor h1 {
+  padding-top: 5.625rem;
+}
+
+.registor img {
   position: absolute;
   top: 0;
   width: 100%;
@@ -363,15 +366,13 @@ footer p {
 /* お申し込みフォーム */
 
 .form_wrap {
-  width: 80%;
-  margin-left: 15%;
-  margin-right: 5%;
+  width: 69.375rem;
+  margin: 0 auto;
 }
 
 .form_content {
   position: relative;
-  height: 61.1875rem;
-  margin-top: 4.0625rem;
+  margin-top: 3.75rem;
   margin-bottom: 6.5625rem;
   background-color: #1A1A1A;
   border: 5px solid #D136D1;
@@ -381,7 +382,7 @@ footer p {
   font-size: 1rem;
   letter-spacing: 0.05em;
   color: #FFFFFF;
-  padding: 10%;
+  padding: 5.625rem 0 11rem 10rem;
 }
 
 .label_section {
@@ -402,17 +403,33 @@ footer p {
   color: #D136D1;
 }
 
-.work_content {
-  margin-top: 0.625rem;
+.work_element {
+  padding-right: 2.1875rem;
+}
+
+.work_element:last-child {
+  padding-right: 0;
 }
 
 .work_element span {
   font-weight: 400;
-  vertical-align: 0.25rem;
+  vertical-align: 0.15rem;
 }
 
-#question {
-  width: 55%;
+.input_area {
+  border: 1px solid #AAAAAA;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  width: 18.75rem;
+  height: 2.1875rem;
+}
+
+.tel {
+  width: 13.9375rem;
+}
+
+.question {
+  width: 37.5rem;
   height: 12.5rem;
   font-family: 'Noto Sans JP';
   font-weight: 400;
@@ -421,18 +438,17 @@ footer p {
   padding: 0.5rem;
 }
 
-.input_area {
-  border: 1px solid #AAAAAA;
-  border-radius: 0.375rem;
-  font-size: 1rem;
-}
-
 .input_area::placeholder {
   color: #8B8B8B;
 }
 
-select {
+.select_area {
+  border: 1px solid #AAAAAA;
+  border-radius: 0.375rem;
+  font-size: 1rem;
   color: #8B8B8B;
+  width: 18.75rem;
+  height: 2.1875rem;
 }
 
 .btn_submit {
@@ -448,10 +464,9 @@ select {
   color: #fff;
   font-size: 1.06rem;
   letter-spacing: 0.1875rem;
-  margin-top: 3.125rem;
   position:absolute;
-  bottom: 5.3125rem;
-  left:50%;
+  bottom: 5rem;
+  left: 50%;
   transform:translateX(-50%);
 }
 
