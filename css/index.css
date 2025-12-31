@@ -1,0 +1,147 @@
+.form_content {
+  position: relative;
+  margin: 3.75rem auto 0;
+  max-width: 800px;
+  padding: 4rem 5rem;
+  background-color: #fff;
+  border: 5px solid #6a5853;
+  border-radius: 1.25rem;
+}
+
+.label_section {
+  width: 100%;
+  max-width: 600px;
+}
+
+.label_text {
+  font-weight: bold;
+}
+
+.input_area,
+.body,
+.select_area select {
+  width: 100%;
+  height: 3rem;
+}
+
+.result {
+  margin-top: 100px;
+}
+
+.list-area {
+  min-height: 300px;
+  padding: 2rem 0;
+  border-top: 3px solid #6a5853;
+}
+
+#resultPlaceholder {
+  margin: 3rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  text-align: center;
+  color: #6a5853;
+  background: #f8f6f5;
+  border: 2px dashed #6a5853;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+.lists {
+  list-style: none;
+  padding: 0;
+}
+
+.lists-item {
+  margin-bottom: 16px;
+}
+
+.lists-item .list-inner {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  cursor: pointer;
+  border: 3px solid #6a5853;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.lists-item .list-inner:hover {
+  background: #ece7e6;
+}
+
+.btn-wrap {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+/* =========================
+一覧画面：レスポンシブ対応
+========================= */
+
+/* タブレット版 */
+@media (max-width: 1024px) {
+
+  .form_content {
+    padding: 3rem 3rem;
+  }
+
+  .lists-item .list-inner {
+    width: 80%;
+  }
+}
+
+/* モバイル版 */
+@media (max-width: 768px) {
+
+  .form_content {
+    padding: 2rem 1.5rem;
+  }
+
+  .label_section {
+    max-width: 100%;
+  }
+
+  .input_area,
+  .body,
+  .select_area select {
+    width: 100%;
+  }
+
+  .lists-item .list-inner {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .lists-item {
+    margin-bottom: 20px;
+  }
+
+  .list-inner p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .btn-wrap {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .form_content {
+    padding: 1.5rem 1rem;
+  }
+
+  .list-inner p {
+    font-size: 13px;
+  }
+}

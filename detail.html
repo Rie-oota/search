@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCH</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/detail.css">
+  </head>
+  <body>
+    <main class="detail-page">
+      <div class="container">
+        <h1>DETAIL</h1>
+        <h2>投稿詳細</h2>
+        <div id="message" class="message"></div>
+        <div class="card">
+          <form id="detailForm">
+            <div class="form-group">
+              <p id="postId"></p>
+            </div>
+            <div class="form-group">
+              <label for="userId">ユーザー</label>
+              <select id="userId" class="form-control select">
+                <option value="">選択してください</option>
+                <option value="1">ユーザー1</option>
+                <option value="2">ユーザー2</option>
+                <option value="3">ユーザー3</option>
+                <option value="4">ユーザー4</option>
+                <option value="5">ユーザー5</option>
+                <option value="6">ユーザー6</option>
+                <option value="7">ユーザー7</option>
+                <option value="8">ユーザー8</option>
+                <option value="9">ユーザー9</option>
+                <option value="10">ユーザー10</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="title">タイトル</label>
+              <input id="title" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+              <label for="body">本文</label>
+              <textarea id="body" class="form-control textarea"></textarea>
+            </div>
+            <div class="actions">
+              <button type="button" id="updateBtn">更新</button>
+              <button type="button" id="deleteBtn" class="danger">削除</button>
+              <a href="index.html" class="back">一覧へ戻る</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>©2030 Web Design Conference</p>
+    </footer>
+    <script src="./js/detail.js"></script>
+  </body>
+</html>

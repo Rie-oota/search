@@ -1,0 +1,265 @@
+/* =========================
+カラー設計
+========================= */
+:root {
+  --main-color: #6a5853;
+  --main-hover: #ab918a;
+  --bg-color: #ef9182;
+  --card-bg: #ffffff;
+  --border-color: #6a5853;
+  --text-main: #6a5853;
+  --success: #16a34a;
+  --error: #dc2626;
+}
+
+/* =========================
+ベース
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-main);
+}
+
+main {
+  padding: 40px 16px;
+}
+
+/* =========================
+共通レイアウト
+========================= */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =========================
+見出し
+========================= */
+h1 {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: 20px;
+  color: var(--text-main);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+カード
+========================= */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 40px;
+  border: 5px solid #6a5853;
+}
+
+/* =========================
+ボタン
+========================= */
+button,
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  background: var(--main-color);
+  color: #fff;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--main-hover);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+メッセージ
+========================= */
+.message {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.message.success {
+  background: #fff;
+  border: 3px solid #16a34a;
+  color: var(--success);
+}
+
+.message.error {
+  background: #fff;
+  border: 3px solid #dc2626;
+  color: var(--error);
+}
+
+/* =========================
+フォーム共通スタイル
+========================= */
+.form-control {
+  width: 100%;
+  max-width: 600px;
+  height: 3rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 3px solid #6a5853;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.label_text {
+  color: #6a5853;
+}
+
+.form-control.textarea {
+  height: auto;
+  min-height: 12rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+/* =========================
+フッター
+========================= */
+footer p {
+  text-align: center;
+}
+
+/* =========================
+レスポンシブ共通対応
+========================= */
+
+/* タブレット版 */
+@media (max-width: 1024px) {
+
+  h1 {
+    font-size: 48px;
+  }
+
+  main {
+    padding: 32px 20px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .card,
+  .form_content {
+    padding: 32px;
+  }
+
+  .lists-item .list-inner {
+    width: 80%;
+  }
+
+  .actions {
+    gap: 24px;
+  }
+}
+
+/* モバイル版 */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 36px;
+    margin: 0 0 16px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  main {
+    padding: 24px 12px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .card,
+  .form_content {
+    padding: 24px 16px;
+  }
+
+  .form-control,
+  input,
+  select,
+  textarea {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  textarea.form-control,
+  textarea#body {
+    min-height: 10rem;
+  }
+
+  .lists-item .list-inner {
+    width: 100%;
+  }
+
+  .lists-item {
+    margin-bottom: 20px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .actions button,
+  .actions a {
+    width: 100%;
+  }
+
+  .pagination {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .card,
+  .form_content {
+    padding: 20px 12px;
+  }
+
+  button,
+  .btn,
+  .actions a {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+

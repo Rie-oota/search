@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCH</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body>
+    <main>
+      <section class="cointainer">
+        <h1>SEARCH</h1>
+        <h2>検索フォーム</h2>
+        <form action="">
+          <div class="form_content card">
+            <div class="label_section">
+              <p class="label_text">ユーザーID</p>
+              <div class="select_area">
+                <div class="select_unit">
+                  <select class="form-control select userId">
+                    <option value="0" disabled selected>未選択（全ユーザー）</option>
+                    <option value="1">ユーザー1</option>
+                    <option value="2">ユーザー2</option>
+                    <option value="3">ユーザー3</option>
+                    <option value="4">ユーザー4</option>
+                    <option value="5">ユーザー5</option>
+                    <option value="6">ユーザー6</option>
+                    <option value="7">ユーザー7</option>
+                    <option value="8">ユーザー8</option>
+                    <option value="9">ユーザー9</option>
+                    <option value="10">ユーザー10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="label_section">
+              <p class="label_text" for="id">投稿ID</p>
+              <input class="form-control id" type="text">
+            </div>
+            <div class="label_section">
+              <p class="label_text" for="title">タイトル</p>
+              <input class="form-control title" type="text">
+            </div>
+            <div class="label_section">
+              <p class="label_text" for="body">本文</p>
+              <textarea class="form-control textarea body" type="text" placeholder="ご自由にお書きください"></textarea>
+            </div>
+            <div class="btn-wrap">
+              <input class="btn btn_submit" type="submit" value="検索する">
+            </div>
+          </div>
+        </form>
+      </section>
+      <section class="result">
+        <h1>RESULT</h1>
+        <h2>検索結果一覧</h2>
+        <div class="list-area">
+          <div class="inner">
+            <div id="resultPlaceholder">
+              検索条件を入力して「検索する」を押してください
+            </div>
+            <ul class="lists"></ul>
+            <div class="pagination">
+              <button class="prev" disabled>前</button>
+              <span class="page-info"></span>
+              <button class="next" disabled>次</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>©2030 Web Design Conference</p>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>
