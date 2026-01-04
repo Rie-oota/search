@@ -127,15 +127,39 @@ async function searchPostsWithLike({ userId, id, title, body }) {
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  document.querySelectorAll(".message").forEach(el => el.remove());
+
+  const errors = [];
+
+  const userId = document.querySelector(".userId").value;
+  const id = document.querySelector(".id").value.trim();
+  const title = document.querySelector(".title").value.trim();
+  const body = document.querySelector(".body").value.trim();
+
+  if (id !== "" && !Number.isInteger(Number(id))) {
+    errors.push("投稿IDは整数で入力してください");
+  }
+
+  if (title !== "" && title.length > 10) {
+    errors.push("タイトルは10文字以内で入力してください");
+  }
+
+  if (body !== "" && body.length > 50) {
+    errors.push("本文は50文字以内で入力してください");
+  }
+
+  if (errors.length > 0) {
+    showMessage(errors.join("<br>"));
+    return;
+  }
+
   try {
 
-    const rawUserId = document.querySelector(".userId").value;
-
     const params = {
-      userId: rawUserId !== "0" ? rawUserId : undefined,
-      id: document.querySelector(".id").value || undefined,
-      title: document.querySelector(".title").value || undefined,
-      body: document.querySelector(".body").value || undefined,
+      userId: userId !== "0" ? userId : undefined,
+      id: id || undefined,
+      title: title || undefined,
+      body: body || undefined,
     };
 
     const result = await searchPostsWithLike(params);
