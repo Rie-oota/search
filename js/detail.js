@@ -25,6 +25,29 @@ function clearMessage() {
 }
 
 /* =========================
+バリデーション（詳細画面）
+========================= */
+function validateDetail() {
+  const errors = [];
+
+  const userId = userIdEl.value;
+  const title = titleEl.value.trim();
+  const body = bodyEl.value.trim();
+
+  if (!userId) {
+    errors.push("ユーザーは必須です");
+  }
+  if (!title) {
+    errors.push("タイトルは必須です");
+  }
+  if (!body) {
+    errors.push("本文は必須です");
+  }
+
+  return errors;
+}
+
+/* =========================
 初期表示
 ========================= */
 function getPostIdFromUrl() {
@@ -60,23 +83,16 @@ function setFormData(post) {
 async function updatePost() {
   clearMessage();
 
+  // バリデーション
+  const errors = validateDetail();
+  if (errors.length > 0) {
+    showMessage(errors.join("\n"), true);
+    return; // エラー時は API を実行しない
+  }
+
   const userId = userIdEl.value;
   const title = titleEl.value.trim();
   const body = bodyEl.value.trim();
-
-  // バリデーション
-  if (!userId) {
-    showMessage("ユーザーは必須です", true);
-    return;
-  }
-  if (!title) {
-    showMessage("タイトルは必須です", true);
-    return;
-  }
-  if (!body) {
-    showMessage("本文は必須です", true);
-    return;
-  }
 
   try {
     const response = await fetch(`${API_BASE}/${currentPostId}`, {
